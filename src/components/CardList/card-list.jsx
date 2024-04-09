@@ -84,6 +84,7 @@ export class CardList extends Component {
         }
 
         this.props.takeSuggestion(suggestion);
+        store.dispatch(dismissCard({ serviceUrl, cardUUID })); // I added this
       } else {
         console.error('There was no label on this suggestion', suggestion);
       }
