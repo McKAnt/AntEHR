@@ -2,6 +2,14 @@
 
 ```
 npm install --legacy-peer-deps
+
+# Deploy
+rm -rf docs
+npm run build
+mv build docs
+git add docs
+git commit -m 'Deploy'
+git push
 ```
 
 # Original README.md below this line

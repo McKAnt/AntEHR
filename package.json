@@ -61,8 +61,8 @@
     "terra-clinical-error-view": "^1.4.0",
     "terra-content-container": "^2.4.0",
     "terra-date-picker": "^2.5.0",
-    "terra-dropdown-button": "^1.13.0",
     "terra-dialog": "^1.0.0",
+    "terra-dropdown-button": "^1.13.0",
     "terra-form": "^2.4.0",
     "terra-form-checkbox": "^2.2.0",
     "terra-form-field": "^2.1.0",
@@ -83,6 +83,7 @@
     "uuid": "^3.3.3"
   },
   "devDependencies": {
+    "@azure/static-web-apps-cli": "^1.1.7",
     "@babel/core": "^7.5.5",
     "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
     "@babel/plugin-transform-async-to-generator": "^7.5.0",

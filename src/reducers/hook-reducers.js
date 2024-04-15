@@ -6,7 +6,7 @@ const initialState = {
   currentHook: 'patient-view',
   currentScreen: 'patient-view',
   isLoadingData: false,
-  isContextVisible: true,
+  isContextVisible: false,
   triggerCount: 0,
   apps: [],
   screens: {

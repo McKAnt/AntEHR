@@ -20,7 +20,7 @@ const getPersistedServices = () => {
 const initialState = {
   configuredServices: {},
   configuredServiceUrls: getPersistedServices(),
-  defaultUrl: 'https://sandbox-services.cds-hooks.org/cds-services',
+  defaultUrl: 'https://postit-qa.dev.aksi.west.us.mckesson.com/cds-services',
   testServicesUrl: null,
 };
 
