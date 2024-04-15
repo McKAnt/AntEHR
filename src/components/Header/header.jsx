@@ -256,7 +256,7 @@ export class Header extends Component {
     const logo = (
       <div>
         <span><img src={cdsHooksLogo} alt="" height="30" width="30" /></span>
-        <b className={styles['logo-title']}>CDS Hooks Sandbox</b>
+        <b className={styles['logo-title']}>AntEHR</b>
       </div>
     );
 

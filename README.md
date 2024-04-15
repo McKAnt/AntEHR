@@ -1,5 +1,11 @@
 # CDS Hooks Sandbox
 
+```
+npm install --legacy-peer-deps
+```
+
+# Original README.md below this line
+
 The CDS Hooks Sandbox (coined here as "Sandbox") is a tool that allows users to simulate the workflow of the [CDS Hooks](http://cds-hooks.org/) standard. It acts as a sort of "mock"-EHR that can be used as a demonstration tool for showing how CDS Hooks would work with an EHR system, as well as a testing tool to try out different CDS Services to ensure compatibility with the spec. This application is built using React and Redux.
 
 Try out the live tool at [https://sandbox.cds-hooks.org](https://sandbox.cds-hooks.org)!
@@ -15,7 +21,7 @@ The Sandbox supports the following CDS Hooks Workflows:
 
 - `patient-view`: On initial load, the Sandbox displays what looks like the opening of a patient's chart. A default CDS Service displays a card pertaining to the `patient-view` hook invoked on this view. On the toolbar in the header, the Patient View tab should be highlighted to indicate this default view. When navigated to this view, the Sandbox will invoke configured CDS Services listening on the `patient-view` hook.
 - `order-select`: Invoked by the Rx View tab on the header, the Sandbox displays an EHR-like view of a form a care provider would use to author a medication for a specific condition. With the patient in context, you can drill down into the specific (if any) conditions the patient has. Additionally, you can choose from an extensive list of medications to prescribe, and adjust dosage instructions accordingly. Any action taken on this view once a medication is prescribed will invoke the configured CDS Services on this tool listening on the `order-select` hook.
-   
+
 ### Tools
 
 The Sandbox contains different tools to test and configure CDS Services. Below we describe each functionality and how to use it.
@@ -62,16 +68,16 @@ Currently, launching the Sandbox by simply navigating to `https://sandbox.cds-ho
 To test the Sandbox against a secured FHIR server, see steps below.
 
 1. If you have not done so before, create an [HSPC Sandbox account](https://sandbox.hspconsortium.org/#/start).
-2. Click the button "Create Sandbox" and follow the prompts. Make sure to check the box "Allow Open FHIR Endpoint" and "Apply Default Data Set". 
+2. Click the button "Create Sandbox" and follow the prompts. Make sure to check the box "Allow Open FHIR Endpoint" and "Apply Default Data Set".
 3. On the "Apps" page, launch the "CDS Hooks Sandbox" app, and choose a patient to launch with.
 
-The Sandbox should automatically launch in a new tab, and the configured FHIR server (secured endpoint) should be that of the HSPC Sandbox that launched it.  
+The Sandbox should automatically launch in a new tab, and the configured FHIR server (secured endpoint) should be that of the HSPC Sandbox that launched it.
 
 Note: When launching the Sandbox in this manner, the option to change the FHIR server in context is removed from the tool. This is because the Sandbox will be passed an `access_token` when launched as a SMART application from HSPC. This token will be passed to CDS Services in requests, and used to query the FHIR server for any additional extra queries down the workflow.
 
 ## Local Development
 
-You can develop on and run this project locally by using the following steps below. 
+You can develop on and run this project locally by using the following steps below.
 
 ### Setup
 
@@ -120,7 +126,7 @@ We welcome any contributions to help further enhance this tool for the CDS Hooks
 
 1. [Fork this project](https://help.github.com/articles/fork-a-repo/) to make a copy of this repository onto your own Github profile
 1. Make necessary code changes onto your forked project and run the application locally to ensure expected behavior
-2. Lint and test the code changes to guarantee the project is maintained moving forward 
+2. Lint and test the code changes to guarantee the project is maintained moving forward
 3. Issue a pull request on the `cds-hooks/sandbox` repository with your changes for review
 4. Make any changes/revisions (as necessary)
 5. The project maintainers will merge the pull request in once approved
