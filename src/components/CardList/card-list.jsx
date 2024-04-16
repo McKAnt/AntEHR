@@ -347,6 +347,7 @@ export class CardList extends Component {
           if (overrideReasons) {
             const items = overrideReasons.map((reason) => (
               <Item
+                key={card.uuid}
                 label={`Override: ${reason.display}`}
                 onSelect={() => {
                   this.dismissCard(card.serviceUrl, card.uuid, reason);
