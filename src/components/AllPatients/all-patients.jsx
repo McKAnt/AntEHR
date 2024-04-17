@@ -32,6 +32,9 @@ export const AllPatients = (props) => {
   }).sort((a, b) => {
     return a.name.localeCompare(b.name);
   }).filter(patient => patient.name != 'Jackson, Brenda'); // long id
+  const switchToPatient = (patientId) => {
+    console.log('here', patientId);
+  };
   return (
     <div className={cx(styles['all-patients'], isHalfView)}>
       <h1 className={styles['view-title']}>All Patients</h1>
@@ -45,7 +48,12 @@ export const AllPatients = (props) => {
             return (
               <tr key={patient.id}>
                 <td>{patient.id}</td>
-                <td>{patient.name}</td>
+                <td>
+                  <a href="#"
+                     onClick={() => switchToPatient(patient.id)}>
+                    {patient.name}
+                  </a>
+                </td>
               </tr>
             );
           })}
