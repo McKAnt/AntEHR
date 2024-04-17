@@ -31,7 +31,7 @@ export const AllPatients = (props) => {
       }
   }).sort((a, b) => {
     return a.name.localeCompare(b.name);
-  }).filter(patient => patient.name != 'Jackson, Brenda');
+  }).filter(patient => patient.name != 'Jackson, Brenda'); // long id
   return (
     <div className={cx(styles['all-patients'], isHalfView)}>
       <h1 className={styles['view-title']}>All Patients</h1>
