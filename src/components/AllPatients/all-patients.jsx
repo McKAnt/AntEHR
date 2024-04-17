@@ -8,6 +8,7 @@ import cx from 'classnames';
 import CardList from '../CardList/card-list';
 import styles from './all-patients.css';
 import cdsExecution from '../../middleware/cds-execution';
+import retrievePatient from '../../retrieve-data-helpers/patient-retrieval'
 
 const propTypes = {
   patients: PropTypes.array.isRequired,
@@ -16,6 +17,16 @@ const propTypes = {
    */
   isContextVisible: PropTypes.bool.isRequired,
 };
+
+async function switchToPatient(patientId) {
+  try {
+    await retrievePatient(patientId);
+  } catch (err) {
+    console.error(err);
+    // this.setState({ isChangePatientOpen: true });
+    // if (this.state.settingsOpen) { this.closeSettingsMenu(); }
+  }
+}
 
 /**
  * Left-hand side on the mock-EHR view that displays the cards and relevant UI for the patient-view hook
@@ -32,9 +43,6 @@ export const AllPatients = (props) => {
   }).sort((a, b) => {
     return a.name.localeCompare(b.name);
   }).filter(patient => patient.name != 'Jackson, Brenda'); // long id
-  const switchToPatient = (patientId) => {
-    console.log('here', patientId);
-  };
   return (
     <div className={cx(styles['all-patients'], isHalfView)}>
       <h1 className={styles['view-title']}>All Patients</h1>
