@@ -34,3 +34,10 @@ export function setTestFhirServer(fhirServer) {
     fhirServer,
   };
 }
+
+export function setAllPatients(patients) {
+  return {
+    type: types.SET_ALL_PATIENTS,
+    patients
+  }
+}

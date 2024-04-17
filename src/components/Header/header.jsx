@@ -291,6 +291,7 @@ export class Header extends Component {
     const navigation = (
       <div className={styles['nav-tabs']}>
         <div className={styles['nav-container']}>
+          <button className={this.getNavClasses('all-patients')} onClick={() => this.switchHook('all-patients')}>All Patients</button>
           <button className={this.getNavClasses('patient-view')} onClick={() => this.switchHook('patient-view')}>Patient View</button>
           <button className={this.getNavClasses('rx-view')} onClick={() => this.switchHook('order-select', 'rx-view')}>Rx View</button>
           <button className={this.getNavClasses('pama')} onClick={() => this.switchHook('order-select', 'pama')}>PAMA Imaging</button>

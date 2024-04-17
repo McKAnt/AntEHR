@@ -20,6 +20,7 @@ import PatientEntry from '../PatientEntry/patient-entry';
 import CardDemo from '../CardDemo/card-demo';
 import { setLoadingStatus } from '../../actions/ui-actions';
 import { setHook } from '../../actions/hook-actions';
+import AllPatients from '../AllPatients/all-patients'
 
 const propTypes = {
   /**
@@ -213,6 +214,7 @@ export class MainView extends Component {
 
   render() {
     const hookView = {
+      'all-patients': <AllPatients />,
       'patient-view': <PatientView />,
       'rx-view': <RxView />,
       pama: <Pama />,

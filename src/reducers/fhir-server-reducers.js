@@ -1,13 +1,13 @@
 import * as types from '../actions/action-types';
 
 const initialState = {
-  testFhirServer: null,
   currentFhirServer: '',
   currentMetadata: null,
   defaultFhirServer: 'https://launch.smarthealthit.org/v/r2/fhir',
   fhirVersion: '1.0.2',
   isDefaultFhirServer: true,
   accessToken: null,
+  allPatients: []
 };
 
 const fhirServerReducers = (state = initialState, action) => {
@@ -40,6 +40,14 @@ const fhirServerReducers = (state = initialState, action) => {
       // Sets the FHIR server a user enters to change the current FHIR server, before testing it is a valid endpoint
       case types.SET_TEST_FHIR_SERVER: {
         return { ...state, testFhirServer: action.fhirServer };
+      }
+      case types.SET_ALL_PATIENTS: {
+        const newState = {
+          ...state,
+          allPatients: action.patients
+        }
+        // debugger;
+        return newState;
       }
       default:
         return state;

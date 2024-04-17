@@ -10,6 +10,9 @@ const initialState = {
   triggerCount: 0,
   apps: [],
   screens: {
+    'all-patients': {
+      // TODO: I think trigger points mean when the registered CDS hooks get called?
+    },
     'patient-view': {
       triggerPoints: {
         'face-sheet/patient-view': {

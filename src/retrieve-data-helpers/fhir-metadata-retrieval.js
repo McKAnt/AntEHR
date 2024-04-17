@@ -1,6 +1,6 @@
 import queryString from 'query-string';
 import axios from 'axios';
-import { signalSuccessFhirServerRetrieval, signalFailureFhirServerRetrieval, setTestFhirServer } from '../actions/fhir-server-actions';
+import { signalSuccessFhirServerRetrieval, signalFailureFhirServerRetrieval, setTestFhirServer, setAllPatients } from '../actions/fhir-server-actions';
 import store from '../store/store';
 
 /**
@@ -36,7 +36,9 @@ function retrieveFhirMetadata(testUrl) {
         url: `${testFhirServer}/Patient`,
         headers,
         validateStatus: (status) => status !== 401,
-      }).then(() => {
+      }).then((patientsResult) => {
+        store.dispatch(setAllPatients(patientsResult.data.entry));
+        // Not sure why it had to get the patient data before processing the metadata (?)
         if (metadataResult.data && Object.keys(metadataResult.data).length) {
           store.dispatch(signalSuccessFhirServerRetrieval(testFhirServer, metadataResult.data));
           return resolve();
