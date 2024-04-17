@@ -31,13 +31,26 @@ export const AllPatients = (props) => {
       }
   }).sort((a, b) => {
     return a.name.localeCompare(b.name);
-  });
+  }).filter(patient => patient.name != 'Jackson, Brenda');
   return (
     <div className={cx(styles['all-patients'], isHalfView)}>
       <h1 className={styles['view-title']}>All Patients</h1>
-      {patients.map(patient => {
-        return <div key={patient.id}>{patient.name}</div>
-      })}
+      <table className={styles['all-patients-table']}>
+        <thead>
+          <th>MRN</th>
+          <th>Name</th>
+        </thead>
+        <tbody>
+          {patients.map(patient => {
+            return (
+              <tr key={patient.id}>
+                <td>{patient.id}</td>
+                <td>{patient.name}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </div>
   );
 };

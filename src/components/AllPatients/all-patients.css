@@ -33,3 +33,10 @@
     display: inline-block;
   }
 }
+
+.all-patients-table td {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
