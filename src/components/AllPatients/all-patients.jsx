@@ -32,6 +32,7 @@ async function switchToPatient(patientId, setHook) {
     // this.setState({ isChangePatientOpen: true });
     // if (this.state.settingsOpen) { this.closeSettingsMenu(); }
   }
+  return false;
 }
 
 /**
@@ -63,8 +64,10 @@ export const AllPatients = (props) => {
               <tr key={patient.id}>
                 <td>{patient.id}</td>
                 <td>
-                  <a href="#"
-                     onClick={() => switchToPatient(patient.id, props.setHook)}>
+                  <a
+                    href="javascript: void(0)"
+                    onClick={() => switchToPatient(patient.id, props.setHook)}
+                  >
                     {patient.name}
                   </a>
                 </td>
